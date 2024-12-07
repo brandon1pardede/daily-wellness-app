@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Daily Activities & Wellness Management System
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This comprehensive Next.js application serves as a dynamic platform for managing and suggesting daily wellness activities. The system is designed to provide users with a structured approach to maintaining physical and mental well-being through carefully curated activities across multiple domains.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Core Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Activity Management
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Day-based Organization**: Activities systematically organized by days of the week
+- **Category Classification**: Activities segregated into distinct categories:
+  - Fitness & Exercise
+  - Mental Wellness & Meditation
+  - Nutritional Guidance
+  - Mindfulness Practices
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Detailed Activity Specifications
 
-## Learn More
+Each activity in the system is comprehensively documented with:
 
-To learn more about Next.js, take a look at the following resources:
+- Detailed step-by-step descriptions
+- Precise duration metrics
+- Difficulty level indicators (Beginner to Advanced)
+- Required equipment listings
+- Expected benefits and outcomes
+- Category-specific metadata including:
+  - Calorie information for fitness activities
+  - Dietary specifications for nutrition plans
+  - Time-of-day recommendations
+  - Equipment requirements
+  - Exercise intervals and sequences
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technical Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Modern CSS practices
+- **Image Handling**: Optimized image loading through Next.js Image component
+- **Data Fetching**: Server-side and client-side data fetching strategies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Database**: Neon Database (Serverless PostgreSQL)
+- **API Layer**: Next.js API Routes
+- **Database Interface**: @neondatabase/serverless driver
+- **Data Structure**: Normalized database schema with comprehensive activity modeling
+
+## Development Setup
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm/yarn/pnpm package manager
+- PostgreSQL database access (Neon Database credentials)
+
+### Environment Configuration
+
+1. Create a `.env.local` file with necessary database credentials:
+   ```
+   DATABASE_URL=your_neon_database_url
+   ```
+
+### Installation Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone [repository-url]
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. Access the application at [http://localhost:3000](http://localhost:3000)
+
+## Database Schema
+
+The application utilizes a robust database schema including:
+
+- Activities table with comprehensive fields
+- Category relationships
+- Time-based organization
+- Equipment and resource mapping
+
+## API Endpoints
+
+### GET /api/activities
+
+- Supports filtering by day and category
+- Returns structured activity data
+- Includes all associated metadata
+
+## Future Enhancements
+
+- User authentication and personalization
+- Activity scheduling and reminders
+- Progress tracking and analytics
+- Social sharing features
+- Mobile application development
+
+## Contributing
+
+Contributions are welcome. Please follow the standard fork and pull request workflow.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
