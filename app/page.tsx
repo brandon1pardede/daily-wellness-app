@@ -52,6 +52,16 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedCard, setSelectedCard] = useState<Activity | null>(null);
 
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
   useEffect(() => {
     const fetchActivities = async () => {
       try {
@@ -135,7 +145,7 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All days</SelectItem>
-              {Object.keys(groupedActivities).map((day) => (
+              {days.map((day) => (
                 <SelectItem key={day} value={day}>
                   {day}
                 </SelectItem>
